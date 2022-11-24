@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MvcContoso.Models.Student>
+
+@{
+    ViewData["Title"] = "Students List";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Contoso University MVC</h1>
+    <h2>By Samuel Baker</h2>
+</div>
+<h1>List of Students</h1>
+
+<p>
+    <a class="btn btn-info" asp-action="Create">Add Student</a> 
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstMidName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EnrollmentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstMidName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EnrollmentDate)
+            </td>
+            <td>
+                <a class="btn btn-info" asp-action="Edit" asp-route-id="@item.StudentID">Edit</a> |
+                <a class="btn btn-dark" asp-action="Details" asp-route-id="@item.StudentID">Details</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.StudentID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
