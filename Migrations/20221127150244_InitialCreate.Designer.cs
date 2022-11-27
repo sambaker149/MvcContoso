@@ -12,7 +12,7 @@ using MvcContoso.Data;
 namespace MvcContoso.Migrations
 {
     [DbContext(typeof(SchoolContext))]
-    [Migration("20221124143153_InitialCreate")]
+    [Migration("20221127150244_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
